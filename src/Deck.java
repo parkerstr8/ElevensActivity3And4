@@ -64,7 +64,43 @@ public class Deck {
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
     }
+    public void PerfectShuffle()
+    {
+        List<Card> List1 = new ArrayList<Card>();
+        List<Card> List2 = new ArrayList<Card>();
+        List<Card> Shuffled = new ArrayList<Card>();
+        int a =0;
+        int b =0;
+        for(int i = 0;i< cards.size()/2;i++)
+        {
+            List1.add(cards.get(i));
+        }
+        for(int i = cards.size()/2+1;i<cards.size();i++)
+        {
+            List2.add(cards.get(i));
+        }
+        for(int i = 0; i<cards.size();i++)
+        {
+            if(i%2 == 0)
+            {
+                Shuffled.add(List1.get(a));
+                a++;
+            }
+            else
+            {
+                Shuffled.add(List2.get(b));
+                b++;
+            }
+        }
+    }
 
+
+    public void ESelectionShuffle()
+    {
+        List<Card> Shuffled = new ArrayList<Card>();
+
+
+    }
     /**
      * Deals a card from this deck.
      * @return the card just dealt, or null if all the cards have been
