@@ -98,6 +98,13 @@ public class Deck {
     public void ESelectionShuffle()
     {
         List<Card> Shuffled = new ArrayList<Card>();
+        Card temp = new Card;
+        for(int k=51; k>0; k--)
+        {
+            int r=(int)(Math.random()*k+1);
+            cards[k]=cards[r];
+
+        }
 
 
     }
