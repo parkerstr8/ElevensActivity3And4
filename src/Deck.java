@@ -98,15 +98,14 @@ public class Deck {
     public void ESelectionShuffle()
     {
         List<Card> Shuffled = new ArrayList<Card>();
-        Card temp = new Card;
+        Card temp = new Card("jack","ace",10);
         for(int k=51; k>0; k--)
         {
             int r=(int)(Math.random()*k+1);
-            cards[k]=cards[r];
-
+            temp = cards.get(r);
+            cards.set(r,cards.get(k));
+            cards.set(k,temp);
         }
-
-
     }
     /**
      * Deals a card from this deck.
