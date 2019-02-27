@@ -1,7 +1,11 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
-public class Shuffler {
+public class Shuffler
+{
 
     /**
      * The number of consecutive shuffle steps to be performed in each call
@@ -49,8 +53,40 @@ public class Shuffler {
      * the cards in one half with the cards in the other.
      * @param values is an array of integers simulating cards to be shuffled.
      */
-    public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+    public static void perfectShuffle(int[] values)
+    {
+
+
+            int[] List1 = new int[values.length/2];
+            int[] List2 = new int[values.length/2];
+            int[] Shuffled = new int[values.length];
+            int a =0;
+            int b =0;
+            for(int i = 0;i< values.length/2;i++)
+            {
+                List1[i] =values[i];
+            }
+            for(int i = values.length/2;i<values.length;i++)
+            {
+                List2[a] = values[i];
+                a++;
+            }
+            a=0;
+            for(int i = 0; i<values.length;i++)
+            {
+                if(i%2 == 0)
+                {
+                    Shuffled[i] = List1[a];
+                    a++;
+                }
+                else
+                {
+                    Shuffled[i]=List2[b];
+                    b++;
+                }
+            }
+            values = Shuffled;
+
     }
 
     /**
@@ -64,8 +100,17 @@ public class Shuffler {
      * searching for an as-yet-unselected card.
      * @param values is an array of integers simulating cards to be shuffled.
      */
-    public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+    public static void selectionShuffle(int[] values)
+    {
+            int[] Shuffled = new int[values.length];
+            int temp = 0;
+            for(int k=values.length-1; k>0; k--)
+            {
+                int r=(int)((Math.random()*k)+1);
+                temp = values[r];
+                values[r]=values[k];
+                values[k]=temp;
+            }
     }
 }
 
