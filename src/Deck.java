@@ -61,17 +61,11 @@ public class Deck {
      * Randomly permute the given collection of cards
      * and reset the size to represent the entire deck.
      */
-    public void shuffle() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
-    }
-
-
-
-    public void ESelectionShuffle()
+    public void shuffle()
     {
         List<Card> Shuffled = new ArrayList<Card>();
         Card temp = new Card("jack","ace",10);
-        for(int k=51; k>0; k--)
+        for(int k=cards.size()-1; k>0; k--)
         {
             int r=(int)(Math.random()*k+1);
             temp = cards.get(r);
